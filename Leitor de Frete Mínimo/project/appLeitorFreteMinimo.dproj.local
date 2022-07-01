@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/07 16:01:26.000.223,=C:\Users\Bsoft\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/22 11:51:36.000.239,=C:\Users\Bsoft\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/27 11:02:29.000.314,=C:\Users\Bsoft\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/27 11:03:34.000.818,C:\Users\Bsoft\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\view\appLeitorFreteMinimo.view.main.pas</Transaction>
+    <Transaction>2022/06/27 11:03:34.000.818,C:\Users\Bsoft\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\view\appLeitorFreteMinimo.view.main.dfm</Transaction>
+    <Transaction>2022/06/27 11:03:59.000.406,C:\Users\Bsoft\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\project\appLeitorFreteMinimo.dproj</Transaction>
+    <Transaction>2022/06/27 11:30:17.000.628,=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\project\Unit1.pas</Transaction>
+    <Transaction>2022/06/27 11:35:00.000.536,C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\model\appLeitorFreteMinimo.model.extrairHTML.pas=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\project\Unit1.pas</Transaction>
+    <Transaction>2022/06/27 11:35:00.000.536,C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\model\appLeitorFreteMinimo.model.extrairHTML.dfm=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\project\Unit1.dfm</Transaction>
+    <Transaction>2022/06/28 10:32:03.000.553,=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\project\Unit1.pas</Transaction>
+    <Transaction>2022/06/28 11:44:24.000.865,=C:\Users\Bsoft\Desktop\Leitor de Frete Mínimo\project\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

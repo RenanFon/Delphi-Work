@@ -1,0 +1,267 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Leitor de Frete M'#237'nimo | Tabelas '
+  ClientHeight = 813
+  ClientWidth = 1383
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 16
+  object Label1: TLabel
+    Left = 8
+    Top = 95
+    Width = 79
+    Height = 29
+    Caption = 'Tabela'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 15
+    Width = 49
+    Height = 29
+    Caption = 'URL'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Panel7: TPanel
+    Left = 0
+    Top = 744
+    Width = 1383
+    Height = 69
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = -1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -17
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    object ButtonLerHTML: TPanel
+      Left = 491
+      Top = 16
+      Width = 129
+      Height = 37
+      BevelOuter = bvNone
+      Caption = 'Ler HTML'
+      Color = 43520
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -17
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      OnClick = ButtonLerHTMLClick
+    end
+    object Panel5: TPanel
+      Left = 626
+      Top = 16
+      Width = 129
+      Height = 37
+      BevelOuter = bvNone
+      Caption = 'Gerar JSON'
+      Color = 33023
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -17
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Panel6: TPanel
+      Left = 769
+      Top = 16
+      Width = 129
+      Height = 37
+      BevelOuter = bvNone
+      Caption = 'Salvar'
+      Color = 8404992
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -17
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 8
+    Top = 130
+    Width = 1129
+    Height = 608
+    ActivePage = TabSheet1
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Lota'#231#227'o'
+      object dbgLista: TDBGrid
+        Left = 3
+        Top = 0
+        Width = 1118
+        Height = 574
+        DataSource = dsTemp
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Somente automotor'
+      ImageIndex = 1
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Lota'#231#227'o auto desempenho'
+      ImageIndex = 2
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Somente automotor auto desempenho'
+      ImageIndex = 3
+    end
+  end
+  object EditURL: TEdit
+    Left = 8
+    Top = 50
+    Width = 745
+    Height = 24
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+    Text = 
+      'https://www.in.gov.br/en/web/dou/-/resolucao-n-5.959-de-20-de-ja' +
+      'neiro-de-2022-375504795'
+    TextHint = 'Digite a url'
+  end
+  object Memo1: TMemo
+    Left = 751
+    Top = 48
+    Width = 468
+    Height = 76
+    TabOrder = 3
+  end
+  object IdHTTP1: TIdHTTP
+    IOHandler = IdSSLIOHandlerSocketOpenSSL1
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 40
+    Top = 752
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 152
+    Top = 760
+  end
+  object cdsTemp: TClientDataSet
+    PersistDataPacket.Data = {
+      450100009619E0BD01000000180000000A00000000000300000045010D546970
+      6F20646520436172676101004900000001000557494454480200020064001443
+      6F6566696369656E746520646520437573746F01004900000001000557494454
+      4802000200640007556E69646164650100490000000100055749445448020002
+      006400076569786F735F32010049000000010005574944544802000200640007
+      6569786F735F330100490000000100055749445448020002006400076569786F
+      735F340100490000000100055749445448020002006400076569786F735F3501
+      00490000000100055749445448020002001400076569786F735F360100490000
+      000100055749445448020002006400076569786F735F37010049000000010005
+      5749445448020002006400076569786F735F3901004900000001000557494454
+      480200020014000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 48
+    Top = 488
+    object cdsTempTipodeCarga: TStringField
+      DisplayWidth = 25
+      FieldName = 'Tipo de Carga'
+      Size = 100
+    end
+    object cdsTempCoeficientedeCusto: TStringField
+      DisplayWidth = 40
+      FieldName = 'Coeficiente de Custo'
+      Size = 100
+    end
+    object cdsTempUnidade: TStringField
+      DisplayWidth = 15
+      FieldName = 'Unidade'
+      Size = 100
+    end
+    object cdsTempeixos_2: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_2'
+      Size = 100
+    end
+    object cdsTempeixos_3: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_3'
+      Size = 100
+    end
+    object cdsTempeixos_4: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_4'
+      Size = 100
+    end
+    object cdsTempeixos_5: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_5'
+    end
+    object cdsTempeixos_6: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_6'
+      Size = 100
+    end
+    object cdsTempeixos_7: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_7'
+      Size = 100
+    end
+    object cdsTempeixos_9: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_9'
+    end
+  end
+  object dsTemp: TDataSource
+    DataSet = cdsTemp
+    Left = 124
+    Top = 493
+  end
+end

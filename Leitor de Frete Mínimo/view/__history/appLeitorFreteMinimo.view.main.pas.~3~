@@ -1,0 +1,42 @@
+unit appLeitorFreteMinimo.view.main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  idhttp;
+
+type
+  TFormMain = class(TForm)
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Edit2: TEdit;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    Memo1: TMemo;
+    procedure BitBtn4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMain: TFormMain;
+  idhttp: TIdHTTP;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormMain.BitBtn4Click(Sender: TObject);
+begin
+  idhttp := TIdHTTP.Create(nil);
+  Memo1.Text := idhttp.Get
+    ('https://www.in.gov.br/en/web/dou/-/resolucao-n-5.959-de-20-de-janeiro-de-2022-375504795');
+end;
+
+end.

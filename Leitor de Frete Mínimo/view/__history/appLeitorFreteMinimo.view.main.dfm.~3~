@@ -1,0 +1,80 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Leitor de Frete M'#237'nimo | Tabelas '
+  ClientHeight = 813
+  ClientWidth = 1383
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 8
+    Top = 8
+    Width = 1363
+    Height = 97
+    BevelOuter = bvNone
+    Color = clBlue
+    ParentBackground = False
+    TabOrder = 0
+    object Panel3: TPanel
+      Left = 2
+      Top = 2
+      Width = 1359
+      Height = 93
+      BevelOuter = bvNone
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 0
+      object Edit2: TEdit
+        Left = 25
+        Top = 26
+        Width = 720
+        Height = 21
+        TabOrder = 0
+        Text = 'Edit1'
+      end
+      object BitBtn4: TBitBtn
+        Left = 751
+        Top = 24
+        Width = 75
+        Height = 25
+        Caption = 'Ler HTML'
+        TabOrder = 1
+        OnClick = BitBtn4Click
+      end
+      object BitBtn5: TBitBtn
+        Left = 1144
+        Top = 24
+        Width = 102
+        Height = 25
+        Caption = 'Gerar Json'
+        TabOrder = 2
+      end
+      object BitBtn6: TBitBtn
+        Left = 1252
+        Top = 24
+        Width = 91
+        Height = 25
+        Caption = 'Salvar arquivo'
+        TabOrder = 3
+      end
+    end
+  end
+  object Memo1: TMemo
+    Left = 8
+    Top = 128
+    Width = 977
+    Height = 425
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 1
+  end
+end

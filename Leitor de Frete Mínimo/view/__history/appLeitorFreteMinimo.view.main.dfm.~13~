@@ -1,0 +1,309 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Leitor de Frete M'#237'nimo | Tabelas '
+  ClientHeight = 813
+  ClientWidth = 1207
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 16
+  object pnlRodape: TPanel
+    Left = 0
+    Top = 733
+    Width = 1207
+    Height = 80
+    Align = alBottom
+    TabOrder = 0
+    ExplicitLeft = -1
+    ExplicitTop = 734
+    ExplicitWidth = 941
+    object btnLerHTML: TBitBtn
+      Left = 427
+      Top = 24
+      Width = 136
+      Height = 33
+      Caption = 'Ler HTML'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnLerHTMLClick
+    end
+    object BitBtn2: TBitBtn
+      Left = 569
+      Top = 24
+      Width = 136
+      Height = 33
+      Caption = 'Salvar arquivo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object BitBtn3: TBitBtn
+      Left = 711
+      Top = 24
+      Width = 136
+      Height = 33
+      Caption = 'Gerar JSON'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object pnlCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 1207
+    Height = 80
+    Align = alTop
+    TabOrder = 1
+    ExplicitWidth = 1383
+    object lblTitulo: TLabel
+      Left = 8
+      Top = 11
+      Width = 783
+      Height = 29
+      Caption = 'Coeficientes dos pisos m'#237'nimos, referentes ao quil'#244'metro rodado:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Memo1: TMemo
+      Left = 884
+      Top = 38
+      Width = 40
+      Height = 28
+      Lines.Strings = (
+        'Memo1')
+      TabOrder = 0
+      WordWrap = False
+    end
+    object Memo2: TMemo
+      Left = 884
+      Top = 4
+      Width = 52
+      Height = 28
+      Lines.Strings = (
+        'Memo2')
+      TabOrder = 1
+      WordWrap = False
+    end
+  end
+  object pnlConteudo: TPanel
+    Left = 0
+    Top = 80
+    Width = 1207
+    Height = 653
+    Align = alClient
+    TabOrder = 2
+    ExplicitLeft = -8
+    ExplicitTop = 86
+    ExplicitWidth = 1383
+    object Label1: TLabel
+      Left = 720
+      Top = 287
+      Width = 79
+      Height = 29
+      Caption = 'Tabela'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 11
+      Top = 5
+      Width = 878
+      Height = 31
+      AutoSize = False
+      Caption = 'Digite a URL:'
+      Color = clRed
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -21
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+    end
+    object pgcTabelas: TPageControl
+      Left = 1
+      Top = 38
+      Width = 1205
+      Height = 614
+      ActivePage = TabSheet1
+      Align = alBottom
+      TabOrder = 0
+      ExplicitWidth = 1329
+      object TabSheet1: TTabSheet
+        Caption = 'Lota'#231#227'o'
+        object dbgLista: TDBGrid
+          Left = 3
+          Top = 0
+          Width = 1197
+          Height = 574
+          DataSource = dsTemp
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -13
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Somente automotor'
+        ImageIndex = 1
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Lota'#231#227'o auto desempenho'
+        ImageIndex = 2
+      end
+      object TabSheet4: TTabSheet
+        Caption = 'Somente automotor auto desempenho'
+        ImageIndex = 3
+      end
+    end
+    object EditURL: TEdit
+      Left = 142
+      Top = 6
+      Width = 731
+      Height = 26
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = 
+        'https://www.in.gov.br/en/web/dou/-/resolucao-n-5.959-de-20-de-ja' +
+        'neiro-de-2022-375504795'
+      TextHint = 'Digite a url'
+    end
+  end
+  object IdHTTP1: TIdHTTP
+    IOHandler = IdSSLIOHandlerSocketOpenSSL1
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 1040
+    Top = 752
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 1136
+    Top = 752
+  end
+  object cdsTemp: TClientDataSet
+    PersistDataPacket.Data = {
+      450100009619E0BD01000000180000000A00000000000300000045010D546970
+      6F20646520436172676101004900000001000557494454480200020064001443
+      6F6566696369656E746520646520437573746F01004900000001000557494454
+      4802000200640007556E69646164650100490000000100055749445448020002
+      006400076569786F735F32010049000000010005574944544802000200640007
+      6569786F735F330100490000000100055749445448020002006400076569786F
+      735F340100490000000100055749445448020002006400076569786F735F3501
+      00490000000100055749445448020002001400076569786F735F360100490000
+      000100055749445448020002006400076569786F735F37010049000000010005
+      5749445448020002006400076569786F735F3901004900000001000557494454
+      480200020014000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 24
+    Top = 752
+    object cdsTempTipodeCarga: TStringField
+      DisplayWidth = 29
+      FieldName = 'Tipo de Carga'
+      Size = 100
+    end
+    object cdsTempCoeficientedeCusto: TStringField
+      DisplayWidth = 40
+      FieldName = 'Coeficiente de Custo'
+      Size = 100
+    end
+    object cdsTempUnidade: TStringField
+      DisplayWidth = 21
+      FieldName = 'Unidade'
+      Size = 100
+    end
+    object cdsTempeixos_2: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_2'
+      Size = 100
+    end
+    object cdsTempeixos_3: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_3'
+      Size = 100
+    end
+    object cdsTempeixos_4: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_4'
+      Size = 100
+    end
+    object cdsTempeixos_5: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_5'
+    end
+    object cdsTempeixos_6: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_6'
+      Size = 100
+    end
+    object cdsTempeixos_7: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_7'
+      Size = 100
+    end
+    object cdsTempeixos_9: TStringField
+      DisplayWidth = 10
+      FieldName = 'eixos_9'
+    end
+  end
+  object dsTemp: TDataSource
+    DataSet = cdsTemp
+    Left = 92
+    Top = 753
+  end
+end
